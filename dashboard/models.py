@@ -1,17 +1,13 @@
 from django.db import models
-<<<<<<< HEAD
-import regex
-import bcrypt
-=======
 import re
 import bcrypt
+
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 class UserManager(models.Manager):
     def validate(self, form):
         errors = {}
         if len(form['first_name']) < 2:
             errors['first_name'] = 'First Name must be at least 2 characters'
->>>>>>> 1ba613e603729dc12f028d284654d6a26ae4f65a
 
         if len(form['last_name']) < 2:
             errors['last_name'] = 'Last Name must be at least 2 characters'

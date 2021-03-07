@@ -1,12 +1,4 @@
 from django.shortcuts import render, redirect
-<<<<<<< HEAD
-from .models import *
-import bcrypt
-# Create your views here.
-
-def index(request):
-    pass
-=======
 from django.contrib import messages
 from .models import User
 
@@ -54,4 +46,3 @@ def success(request):
         'user': user
     }
     return render(request, 'success.html', context)
->>>>>>> 1ba613e603729dc12f028d284654d6a26ae4f65a
