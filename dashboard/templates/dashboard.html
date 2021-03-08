@@ -5,129 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Registration</title>
+    <!-- Bootstrap CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script> -->
+
 
     {% load static %}
-    
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/dashboard.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 
 <body>
 
-  
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <ul class="list-unstyled components m-2">
+                <li class="active">
 
-    <nav class=" navbar navbar-default">
-        <div class="container-fluid">
-            <!-- wrapper for toggle sidebar -->
-            <div class="wrapper">
-                <!-- Sidebar -->
-                <nav id="sidebar">
-        
-                    <ul class="list-unstyled components m-2" id="topSideBar">
-                        <li class="active">
-        
-                            <a href="/dashboard" style="color:  rgb(83, 83, 83);">
-                                <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
-                                Home</a>
-        
-                        </li>
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">place</span>
-                                Nearby</a>
-        
-        
-                        </li>
-        
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">music_note</span>
-                                Concerts</a>
-                        </li>
-        
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">brush</span>
-                                Arts & Theaters</a>
-                        </li>
-        
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">groups</span>
-                                Family</a>
-                        </li>
-        
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">sports</span>
-                                Sports</a>
-                        </li>
-                    </ul>
-        
-                    <ul class="list-unstyled components m-2" id="bottomSideBar">
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">account_circle</span>
-                                Account</a>
-                        </li>
-        
-                        <li>
-                            <a href="#" style="color:  rgb(83, 83, 83)">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
-                                About</a>
-                        </li>
-                    </ul>
-        
-                </nav>
-                <!-- content -->
-                <div id="content">
-                     <nav class="navbar">
-                        <div class="container-fluid">
-                
-                            <button type="button" id="sidebarCollapse" class="btn">
-                                <span class="material-icons" style="color:  rgb(83, 83, 83)" style="color: blue">view_list</span>
-                            </button>
-                
-                        </div>
-                    </nav>
-        
-                </div>
-            </div>
 
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">TheSpot</a>
-            </div>
-            <ul class="nav navbar-nav list-group flex-md-row">
-                <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Concerts</a></li>
-                <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Arts&Theatre</a></li>
-                <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Sports</a></li>
-                <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Family</a></li>
+
+                    <a href="/dashboard" style="color:  rgb(83, 83, 83);">
+                        <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
+                        Home</a>
+
+                </li>
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">place</span>
+                        Nearby</a>
+
+
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">music_note</span>
+                        Concerts</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">brush</span>
+                        Arts & Theaters</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">groups</span>
+                        Family</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">sports</span>
+                        Sports</a>
+                </li>
             </ul>
-            <form class="navbar-form navbar-left" action="/action_page.php">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+
+
+
+            <ul class="list-unstyled components m-2" id="bottomSideBar">
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">account_circle</span>
+                        Account</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
+                        About</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">view_list</span>
+                    </button>
+
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">TheSpot</a>
                     </div>
+                    <ul class="nav navbar-nav list-group flex-md-row">
+                        <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Concerts</a></li>
+                        <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Arts&Theatre</a></li>
+                        <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Sports</a></li>
+                        <li class="list-group-item"><a href="#" style="color:  rgb(83, 83, 83)">Family</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left" action="/action_page.php">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="/LoginHome" class="btn btn-primary">Login</a>
+
                 </div>
-            </form>
-            <a href="/LoginHome" class="btn btn-primary">Login</a>
-    </nav>
+            </nav>
 
+        </div>
+    </div>
 
-
-
-    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
@@ -137,7 +134,14 @@
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
-    </body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
 
+</body>
 
 </html>
