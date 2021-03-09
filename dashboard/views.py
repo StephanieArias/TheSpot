@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import User
 
+from IPython import embed
+
 
 def dashboard(request):
     return render(request, 'dashboard.html')
@@ -46,3 +48,10 @@ def success(request):
         'user': user
     }
     return render(request, 'success.html', context)
+
+## Search Functions 
+def search(request):
+    return render(request, 'ticket_master_api/dashboard.html')
+
+def list_concerts(request):
+    embed()
