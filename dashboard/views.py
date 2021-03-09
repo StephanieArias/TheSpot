@@ -58,6 +58,13 @@ def success(request):
 def about(request):
     return render(request, 'about.html')
 
+def categoryPage(request, catName):
+    # pull informations from modals
+    context ={
+
+    }
+    return render(request, 'categories.html', context) 
+
 
 # Search Functions
 def search_form(request):
@@ -100,3 +107,5 @@ def _generate_google_maps_url(event_data):
         longitude=event['location']['longitude']
         event['location']=f"https://www.google.com/maps/embed/v1/place?key={ googlemaps_key }&q={latitude},{longitude}&zoom=18&maptype=satellite"
     return event_data
+
+

@@ -16,6 +16,6 @@ urlpatterns = [
     path('login', views.login),
     path('logout', views.logout),
     path('success', views.success),
-    path('/category-<str:catName>', views.categoryPage),
+    path('category-<str:catName>', views.categoryPage),
 
 ]

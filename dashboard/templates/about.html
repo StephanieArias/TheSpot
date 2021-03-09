@@ -1,6 +1,113 @@
-{% extends 'dashboard.html' %}
-{% block content %}
-<h1>About Us</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
 
-{% endblock %}
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+
+            <!-- sidebar components -->
+            <ul class="list-unstyled components m-2">
+                <li class="active">
+
+
+
+                    <a href="/" style="color:  rgb(83, 83, 83);">
+                        <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
+                        Home</a>
+
+                </li>
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">place</span>
+                        Nearby</a>
+
+
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">music_note</span>
+                        Concerts</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">brush</span>
+                        Arts & Theaters</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">groups</span>
+                        Family</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">sports</span>
+                        Sports</a>
+                </li>
+            </ul>
+
+
+
+            <ul class="list-unstyled components m-2" id="bottomSideBar">
+                <li>
+                    <a href="#" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">account_circle</span>
+                        Account</a>
+                </li>
+
+                <li>
+                    <a href="/about" style="color:  rgb(83, 83, 83)">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
+                        About</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Rest of Nav Bar-->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <span class="material-icons" style="color:  rgb(83, 83, 83)">view_list</span>
+                    </button>
+
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">TheSpot</a>
+                    </div>
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'concerts_list' %}">
+                        <input type="text" name="artist" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-dark" value="Submit">
+                    </form>
+                    <a href="/LoginHome" class="btn btn-warning">Login</a>
+
+                </div>
+            </nav>
+            <div id="main_content">
+                <h1>About Us</h1>
+            </div>
