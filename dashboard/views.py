@@ -46,3 +46,11 @@ def success(request):
         'user': user
     }
     return render(request, 'success.html', context)
+
+
+def categoryPage(request, catName):
+    # pull informations from modals
+    context ={
+
+    }
+    return render(request, 'explore_category.html', context) 

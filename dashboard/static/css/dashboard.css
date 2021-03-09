@@ -1,32 +1,13 @@
-/* .wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  min-height: 100vh;
-}
-
-#sidebar.active {
-  margin-left: -250px;
-}
-
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-} */
-
-
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
+    padding: 2rem 0rem;
     background: #fafafa;
+}
+
+.card-img-overlay {
+    background-color: rgba(#000, 0.4);
 }
 
 p {
