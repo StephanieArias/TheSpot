@@ -1,8 +1,11 @@
 from . import views
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('', views.dashboard),
+    path('about', views.about,  name='about'),
+    path('search', views.search_form, name='search_form'),
+    path('concerts_list', views.concerts_list, name='concerts_list'),
     path('LoginHome', views.LoginHome),
     path('register', views.register),
     path('login', views.login),
@@ -11,3 +14,5 @@ urlpatterns = [
     path('category-<str:catName>', views.categoryPage),
     path('eventInfo', views.eventInfo),
 ]
+
+
