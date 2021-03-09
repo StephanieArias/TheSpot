@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import User
+from .models import *
 
 from IPython import embed
 
@@ -51,7 +51,7 @@ def success(request):
 
 
 def categoryPage(request, catName):
-    # pull informations from modals
+    # pull information from modals
     context ={
 
     }
@@ -64,3 +64,5 @@ def search(request):
 def list_concerts(request):
     embed()
     
+def eventInfo(request):
+    return render(request, 'event-info.html')

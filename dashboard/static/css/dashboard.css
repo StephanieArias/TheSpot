@@ -1,9 +1,10 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 body {
     font-family: 'Poppins', sans-serif;
-    padding: 2rem 0rem;
     background: #fafafa;
+
 }
 
 .card-img-overlay {
@@ -32,7 +33,7 @@ a:focus {
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 4px rgba(231, 202, 38, 0.726);
 }
 
 .navbar-btn {
@@ -61,8 +62,8 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #f7dd95;
-    color: #fff;
+    background: #272727;
+    color:#F8E9A1;
     transition: all 0.3s;
 }
 
@@ -97,7 +98,7 @@ a[aria-expanded="true"] {
     color: #fff;
     background:  #e7e8e9;
 
-
+}
 .dropdown-toggle::after {
     display: block;
     position: absolute;
@@ -131,7 +132,7 @@ a.download {
 
 a.article,
 a.article:hover {
-    background:  #e7e8e9;!important;
+    background:  #e7e8e9 !important;
     color: #fff !important;
 }
 
@@ -142,22 +143,6 @@ a.article:hover {
 #content {
     width: 100%;
     padding: 20px;
-    min-height: 100vh;
     transition: all 0.3s;
 }
 
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-}

@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Registration</title>
     <!-- Bootstrap CSS CDN -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -22,7 +20,7 @@
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
+        <nav class="collapse" id="sidebar">
 
             <!-- sidebar components -->
             <ul class="list-unstyled components m-2">
@@ -30,40 +28,40 @@
 
 
 
-                    <a href="/dashboard" style="color:  rgb(83, 83, 83);">
-                        <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
+                    <a href="/dashboard">
+                        <span class="material-icons">home</span>
                         Home</a>
 
                 </li>
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">place</span>
+                    <a href="#">
+                        <span class="material-icons">place</span>
                         Nearby</a>
 
 
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">music_note</span>
+                    <a href="#">
+                        <span class="material-icons">music_note</span>
                         Concerts</a>
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">brush</span>
+                    <a href="#">
+                        <span class="material-icons">brush</span>
                         Arts & Theaters</a>
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">groups</span>
+                    <a href="#">
+                        <span class="material-icons">groups</span>
                         Family</a>
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">sports</span>
+                    <a href="#">
+                        <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
             </ul>
@@ -72,14 +70,14 @@
 
             <ul class="list-unstyled components m-2" id="bottomSideBar">
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">account_circle</span>
+                    <a href="#">
+                        <span class="material-icons">account_circle</span>
                         Account</a>
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
+                    <a href="#">
+                        <span class="material-icons">info</span>
                         About</a>
                 </li>
             </ul>
@@ -89,23 +87,36 @@
         <!-- Rest of Nav Bar-->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg bg-dark">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">view_list</span>
+                    <button type="button" id="sidebarCollapse" class="btn" data-bs-toggle="collapse"
+                        data-bs-target="#sidebar">
+                        <span class="material-icons" style="color:#F8E9A1">view_list</span>
                     </button>
 
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/">TheSpot</a>
+                        <a class="navbar-brand ml-4" href="/" style="color:#F8E9A1">TheSpot</a>
                     </div>
-                    <form class="navbar-form navbar-left" action="/concerts/list_concerts" method="POST">
-                        {% csrf_token %}
-                        Enter Artist Name:
-                        <input type="text" name="artist" placeholder="Search">
-                        <input type="submit" value="Submit">
+
+                    <ul class="nav navbar-nav flex-md-row mx-auto">
+                        <a class="nav-link" style="color: #F8E9A1;" href="#">Concerts</a>
+                        <a class="nav-link" style="color: #F8E9A1;" href="#">Arts & Theater</a>
+                        <a  class="nav-link" style="color: #F8E9A1;"href="#">Sports</a>
+                        <a class="nav-link" style="color: #F8E9A1;" href="#">Family</a>
+                    </ul>
+
+                    <form class="navbar-form navbar-left" action="/action_page.php">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <span class="material-icons">search</span>
+                                </button>
+                            </div>
+                        </div>
                     </form>
-                    <a href="/LoginHome" class="btn btn-primary">Login</a>
+                    <a href="/LoginHome" class="btn" style="color: #F8E9A1;"> Sign In</a>
 
                 </div>
             </nav>
@@ -264,7 +275,7 @@
                     </div>
 
                     <div class="col-sm-3">
-                         <a href="">
+                        <a href="">
                             <div class="card bg-dark text-white">
 
                                 <svg class="bd-placeholder-img" width="100%" height="100%"
@@ -281,7 +292,7 @@
                     </div>
 
                     <div class="col-sm-3">
-                         <a href="">
+                        <a href="">
                             <div class="card bg-dark text-white">
 
                                 <svg class="bd-placeholder-img" width="100%" height="100%"
@@ -302,7 +313,7 @@
                 <div class="row m-3 mx-auto justify-content-center">
 
                     <div class="col-sm-3">
-                         <a href="">
+                        <a href="">
                             <div class="card bg-dark text-white">
 
                                 <svg class="bd-placeholder-img" width="100%" height="100%"
@@ -318,7 +329,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                         <a href="">
+                        <a href="">
                             <div class="card bg-dark text-white">
 
                                 <svg class="bd-placeholder-img" width="100%" height="100%"
@@ -334,7 +345,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                         <a href="">
+                        <a href="">
                             <div class="card bg-dark text-white">
 
                                 <svg class="bd-placeholder-img" width="100%" height="100%"
@@ -350,7 +361,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                         <a href="">
+                        <a href="">
                             <div class="card bg-dark text-white">
 
                                 <svg class="bd-placeholder-img" width="100%" height="100%"
@@ -365,7 +376,7 @@
                             </div>
                         </a>
                     </div>
-                </div> 
+                </div>
             </div>
 
         </div>
@@ -385,17 +396,10 @@
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
 
 </body>
 
