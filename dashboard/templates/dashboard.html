@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Registration</title>
+    <title>Dashboard</title>
     <!-- Bootstrap CSS CDN -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
@@ -28,7 +28,7 @@
 
 
 
-                    <a href="/dashboard" style="color:  rgb(83, 83, 83);">
+                    <a href="/" style="color:  rgb(83, 83, 83);">
                         <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
                         Home</a>
 
@@ -76,7 +76,7 @@
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
+                    <a href="/about" style="color:  rgb(83, 83, 83)">
                         <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
                         About</a>
                 </li>
@@ -97,16 +97,19 @@
                     <div class="navbar-header">
                         <a class="navbar-brand" href="/">TheSpot</a>
                     </div>
-                    <form class="navbar-form navbar-left" action="/concerts/list_concerts" method="POST">
-                        {% csrf_token %}
-                        Enter Artist Name:
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'concerts_list' %}">
                         <input type="text" name="artist" placeholder="Search">
-                        <input type="submit" value="Submit">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-dark" value="Submit">
                     </form>
-                    <a href="/LoginHome" class="btn btn-primary">Login</a>
+                    <a href="/LoginHome" class="btn btn-warning">Login</a>
 
                 </div>
             </nav>
+            <div id="main_content">
+                {% block content %}
+                {% endblock %}
+            </div>
 
         </div>
     </div>
@@ -132,6 +135,10 @@
         });
     </script>
 
+
+
 </body>
+
+
 
 </html>
