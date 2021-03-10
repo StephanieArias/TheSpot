@@ -13,7 +13,7 @@ urlpatterns = [
     path('login', views.login),
     path('logout', views.logout),
     path('success', views.success),
-    path('category_list/<str:catName>', views.category_list),
+    path('categoryList/', views.categoryList, name='categoryList', kwargs={'catName':'catName'}),
     path('eventInfo', views.eventInfo),
     path('editAccount', views.editAccount),
     path('nearby', views.nearby)

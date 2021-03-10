@@ -42,7 +42,7 @@
                 </li>
 
                 <li>
-                    <a href="category_list/concert">
+                    <a href="{% url 'category_list' %}" >
 
                         <span class="material-icons">music_note</span>
                         Concerts</a>
@@ -50,19 +50,19 @@
                 </li>
 
                 <li>
-                    <a href="category_list/arts">
+                    <a href="{% url 'category_list' %}" name="concert">
                         <span class="material-icons">brush</span>
                         Arts & Theaters</a>
                 </li>
 
                 <li>
-                    <a href="category_list/family">
+                    <a href="{% url 'category_list' %}" >
                         <span class="material-icons">groups</span>
                         Family</a>
                 </li>
 
                 <li>
-                    <a href="category_list/sports">
+                    <a href="{% url 'category_list' %}">
                         <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
@@ -107,10 +107,10 @@
                     </div>
                     <!-- Figure out how to use api to redirect to categories pages  -->
                     <ul class="nav navbar-nav flex-md-row mx-auto">
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
-                        <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="{% url 'category_list' %}">Concerts</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="{% url 'category_list' %}">Arts & Theater</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="{% url 'category_list' %}s">Sports</a>
+                        <a class="nav-link" style="color: white;" href="{% url 'category_list' %}">Family</a>
                     </ul>
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
@@ -196,7 +196,7 @@
                             <h4 class="card-title">Sports</h4>
 
                             <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                <input type="hidden" value="sport" name="sport" placeholder="Search">
+                                <input type="hidden" value="sport" name="concert" placeholder="Search">
                                 {% csrf_token %}
                                 <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
                             </form>
@@ -217,7 +217,7 @@
                             <div class="link d-flex">
 
                                 <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                    <input type="hidden" value="arts" name="concert" placeholder="Search">
+                                    <input type="hidden" value="arts" name="art" placeholder="Search">
                                     {% csrf_token %}
                                     <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
                                 </form>
@@ -237,7 +237,7 @@
                             <div class="link d-flex">
 
                                 <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                    <input type="hidden" value="" name="concert" placeholder="Search">
+                                    <input type="hidden" value="" name="family" placeholder="Search">
                                     {% csrf_token %}
                                     <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
                                 </form>
