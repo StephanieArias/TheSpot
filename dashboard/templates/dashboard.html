@@ -28,13 +28,8 @@
 
 
 
-<<<<<<< HEAD
-                    <a href="/dashboard">
+                    <a href="/">
                         <span class="material-icons">home</span>
-=======
-                    <a href="/" style="color:  rgb(83, 83, 83);">
-                        <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
->>>>>>> a91351100022d1d2c7e4ec710e481bd3324caeb1
                         Home</a>
 
                 </li>
@@ -48,6 +43,7 @@
 
                 <li>
                     <a href="#">
+                        
                         <span class="material-icons">music_note</span>
                         Concerts</a>
                 </li>
@@ -112,24 +108,14 @@
                         <a  class="nav-link" style="color: #F8E9A1;"href="#">Sports</a>
                         <a class="nav-link" style="color: #F8E9A1;" href="#">Family</a>
                     </ul>
-
-                    <form class="navbar-form navbar-left" action="/action_page.php">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <span class="material-icons">search</span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <a href="/LoginHome" class="btn" style="color: #F8E9A1;"> Sign In</a>
+                    
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'concerts_list' %}">
                         <input type="text" name="artist" placeholder="Search">
                         {% csrf_token %}
                         <input type="submit" class="btn btn-dark" value="Submit">
                     </form>
-                    <a href="/LoginHome" class="btn btn-warning">Login</a>
+                    <a href="/LoginHome" class="btn" style="color: #F8E9A1;"> Sign In</a>
+                    <a href="/cart" class="btn" style="color: #F8E9A1;"> Cart</a>
 
                 </div>
             </nav>
@@ -196,8 +182,13 @@
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Concerts</h4>
                             <div class="link d-flex">
-
-                                <a href="/category-concerts" class=" text-warning">Explore</a>
+                                
+                                <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                                    <input type="hidden" value="events" name="concert" placeholder="Search">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
+                                </form>
+                                
 
                             </div>
                         </div>
@@ -212,7 +203,13 @@
                             alt="Bologna">
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Sports</h4>
-                            <a href="/category-sports" class="card-link text-warning">Explore</a>
+                            
+                            <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                                <input type="hidden" value="sport" name="concert" placeholder="Search">
+                                {% csrf_token %}
+                                <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -227,7 +224,13 @@
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Arts & Theaters</h4>
                             <div class="link d-flex">
-                                <a href="/category-Arts&Theater" class="card-link text-warning">Explore</a>
+
+                                <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                                    <input type="hidden" value="arts" name="concert" placeholder="Search">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
+                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -242,7 +245,13 @@
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Family</h4>
                             <div class="link d-flex">
-                                <a href="/category-family" class="card-link text-warning">Explore</a>
+                                
+                                <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                                    <input type="hidden" value="" name="concert" placeholder="Search">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
+                                </form>
+
                             </div>
                         </div>
                     </div>

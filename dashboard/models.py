@@ -2,6 +2,7 @@ from django.db import models
 import re
 import bcrypt
 
+
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 class UserManager(models.Manager):
     def validate(self, form):
@@ -52,3 +53,5 @@ class User(models.Model):
     password = models.CharField(max_length=255)
 
     objects = UserManager()
+    
+    
