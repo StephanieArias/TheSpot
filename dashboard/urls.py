@@ -15,6 +15,7 @@ urlpatterns = [
     path('success', views.success),
     path('category_list/<str:catName>', views.category_list),
     path('eventInfo', views.eventInfo),
+    path('editAccount', views.editAccount)
 ]
 
 

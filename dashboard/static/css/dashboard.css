@@ -1,10 +1,11 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-
+    color: white;
+    background-color: whitesmoke;
 }
 
 .card-img-overlay {
@@ -29,11 +30,11 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: white;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 2px 2px 4px rgba(231, 202, 38, 0.726);
+    /* box-shadow:1px 1px 2px #49274A; */
 }
 
 .navbar-btn {
@@ -62,8 +63,8 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #272727;
-    color:#F8E9A1;
+    background: #94618E;
+    color:#ffffff;
     transition: all 0.3s;
 }
 
@@ -74,13 +75,9 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #ffffff;
 }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
 
 #sidebar ul li a {
     padding: 10px;
@@ -90,51 +87,14 @@ a:focus {
 
 #sidebar ul li a:hover {
     color:  #e7e8e9;
-    background: #fff;
 }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background:  #e7e8e9;
-
-}
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-ul ul a {
+/* ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background:  #e7e8e9;
-}
+} */
 
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-a.download {
-    background: #fff;
-    color: #e7e8e9;
-}
-
-a.article,
-a.article:hover {
-    background:  #e7e8e9 !important;
-    color: #fff !important;
-}
 
 /* ---------------------------------------------------
     CONTENT STYLE

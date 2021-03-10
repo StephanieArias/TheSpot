@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- Bootstrap CSS CDN -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -22,48 +20,50 @@
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
+        <nav id="sidebar" class="collapse" >
 
             <!-- sidebar components -->
             <ul class="list-unstyled components m-2">
-                <li class="active">
+                <li>
 
 
 
-                    <a href="/" style="color:  rgb(83, 83, 83);">
-                        <span class="material-icons" style="color: rgb(83, 83, 83);">home</span>
+                    <a href="/">
+                        <span class="material-icons">home</span>
                         Home</a>
 
                 </li>
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">place</span>
+                    <a href="#">
+                        <span class="material-icons">place</span>
                         Nearby</a>
 
 
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">music_note</span>
+                    <a href="category_list/concert">
+
+                        <span class="material-icons">music_note</span>
                         Concerts</a>
+
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">brush</span>
+                    <a href="category_list/arts">
+                        <span class="material-icons">brush</span>
                         Arts & Theaters</a>
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">groups</span>
+                    <a href="category_list/family">
+                        <span class="material-icons">groups</span>
                         Family</a>
                 </li>
 
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">sports</span>
+                    <a href="category_list/sports">
+                        <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
             </ul>
@@ -72,14 +72,14 @@
 
             <ul class="list-unstyled components m-2" id="bottomSideBar">
                 <li>
-                    <a href="#" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">account_circle</span>
+                    <a href="/editAccount">
+                        <span class="material-icons">account_circle</span>
                         Account</a>
                 </li>
 
                 <li>
-                    <a href="/about" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
+                    <a href="/about">
+                        <span class="material-icons">info</span>
                         About</a>
                 </li>
             </ul>
@@ -89,27 +89,38 @@
         <!-- Rest of Nav Bar-->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">view_list</span>
+                    <button type="button" id="sidebarCollapse" class="btn" data-bs-toggle="collapse"
+                        data-bs-target="#sidebar">
+                        <span class="material-icons" style="color:#94618E;">view_list</span>
                     </button>
 
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/">TheSpot</a>
+                        <a class="navbar-brand ml-4" href="/" style="color:#94618E;">TheSpot</a>
                     </div>
-                    <form class="navbar-form navbar-left" method="POST" action="{% url 'concerts_list' %}">
-                        <input type="text" name="artist" placeholder="Search">
+
+                    <ul class="nav navbar-nav flex-md-row mx-auto">
+                        <a class="nav-link" style="color: #94618E;" href="/category_list/concerts">Concerts</a>
+                        <a class="nav-link" style="color: #94618E;" href="/category_list/arts">Arts & Theater</a>
+                        <a class="nav-link" style="color: #94618E;" href="/category_list/sports">Sports</a>
+                        <a class="nav-link" style="color: #94618E;" href="/category_list/family">Family</a>
+                    </ul>
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
-                        <input type="submit" class="btn btn-dark" value="Submit">
+                        <input type="submit" class="btn material-icons" style="color: #49274A;" value="search">
                     </form>
-                    <a href="/LoginHome" class="btn btn-warning">Login</a>
+
+                    <a href="/LoginHome" class="btn" style="color: #94618E;"> Sign In</a>
+                    <a href="/cart" class="btn" style="color: #94618E;"> Cart</a>
 
                 </div>
             </nav>
+
             <div id="main_content">
-                <h1>Login/Registration</h1>
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
@@ -117,62 +128,84 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-                <div id="log-reg">
-                    <section>
-                        <h2>Register</h2>
-                        <div class="row">
-                            <div class="col-lg-4 col-lg-offset-4">
-                                <form action="/register" method="post">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <label for="first_name">First Name</label>
-                                        <input type="text" name="first_name" id="first_name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="last_name">Last Name</label>
-                                        <input type="text" name="last_name" id="last_name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" id="email" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" id="password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="confirm">Confirm Password</label>
-                                        <input type="password" name="confirm" id="confirm" class="form-control">
-                                    </div>
-                                    <button class="btn btn-primary">Register</button>
-                                </form>
-                    </section>
-                    </span>
-                </div>
-            </div>
 
 
+                <div class="row my-auto mx-auto">
+                    <div class="col-md-4 mx-auto">
+                                <h2 style="color: #49274A;">Login</h2>
+                            <form action="/login" method="post" style=" color:#94618E;">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="email" >Email</label>
+                                    <input type="email" name="email" id="email" class="form-control border-top-0 border-left-0 border-right-0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control  border-top-0 border-left-0 border-right-0">
+                                </div>
+    
+                                <button class="btn"  style="background-color: #94618E; color:white;">Log In</button>
+                            </form>
+                     
 
+                    </div>
 
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
-                    <section>
-                        <h2>Login</h2>
-                        <form action="/login" method="post">
+                    <div class="col col-sm-2 my-auto mx-auto border-top border-bottom">
+                        <h3  class="text-center" style="color: #49274A;">Login or Registration</h3>
+                    </div>
+
+                    <div class="col-md-4 my-auto mx-auto ">
+                        <h2 style="color: #49274A;">Register</h2>
+                        <form action="/register" method="post" style=" color:#94618E;">
                             {% csrf_token %}
                             <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                <input type="text" name="first_name" id="first_name" class="form-control  border-top-0 border-left-0 border-right-0">
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" name="last_name" id="last_name" class="form-control  border-top-0 border-left-0 border-right-0">
+                            </div>
+                            <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control">
+                                <input type="email" name="email" id="email" class="form-control  border-top-0 border-left-0 border-right-0">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control  border-top-0 border-left-0 border-right-0">
                             </div>
-
-                            <button class="btn btn-primary">Log In</button>
+                            <div class="form-group">
+                                <label for="confirm">Confirm Password</label>
+                                <input type="password" name="confirm" id="confirm" class="form-control  border-top-0 border-left-0 border-right-0">
+                            </div>
+                            <button class="btn" style="background-color: #94618E; color:white;">Register</button>
                         </form>
-                    </section>
-                    </span>
+                    </div>
                 </div>
             </div>
+
+
         </div>
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+
+
+</html>

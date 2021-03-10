@@ -5,6 +5,8 @@ from .models import *
 import requests as req
 
 def dashboard(request):
+    if request.method == 'GET':
+        return render(request, 'dashboard.html')
     return render(request, 'dashboard.html')
 
 
@@ -60,14 +62,8 @@ def success(request):
 def about(request):
     return render(request, 'about.html')
 
-def categoryPage(request, catName):
-    categoryPage
-    # pull information from modals
-    context ={
-
-    }
-    
-    return render(request, 'categories.html', context) 
+def editAccount(request):
+    pass
 
     
 def eventInfo(request):
