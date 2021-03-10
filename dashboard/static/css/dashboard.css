@@ -4,8 +4,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: white;
     background-color: whitesmoke;
+}
+
+h5 {
+    color: #000;
 }
 
 .card-img-overlay {
@@ -20,10 +23,15 @@ p {
     color: #999;
 }
 
+.navbar-brand {
+    color: #009cde;
+}
+
 a,
 a:hover,
 a:focus {
     color: inherit;
+    color: white;
     text-decoration: none;
     transition: all 0.3s;
 }
@@ -63,7 +71,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #94618E;
+    background: #f8e517;
     color:#ffffff;
     transition: all 0.3s;
 }
@@ -83,10 +91,11 @@ a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    color: white;
 }
 
 #sidebar ul li a:hover {
-    color:  #e7e8e9;
+    color:  #009cde;
 }
 
 /* ul ul a {

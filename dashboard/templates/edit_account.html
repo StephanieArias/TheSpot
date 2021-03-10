@@ -1,0 +1,33 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<div class="container mx-auto mb-5">
+    <h2 style="color: #49274A;">Edit Your Account</h2>
+
+<form action="/editAccount" method="post" ">
+                            {% csrf_token %}
+                            <div class=" form-group">
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name" id="first_name" value="{{curUser.first_name}}"
+        class="form-control  border-top-0 border-left-0 border-right-0">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name" value="{{curUser.last_name}}"
+            class="form-control  border-top-0 border-left-0 border-right-0">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="{{curUser.email}}"
+            class="form-control  border-top-0 border-left-0 border-right-0">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="{{curUser.first_name}}"
+            class="form-control  border-top-0 border-left-0 border-right-0">
+    </div>
+    <button class="btn" type="submit" style="background-color: #f8e517; color:white;">Save</button>
+</form>
+</div>
+
+
+{% endblock %}

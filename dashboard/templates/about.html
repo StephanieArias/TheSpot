@@ -20,7 +20,7 @@
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar" class="collapse" style="background: #94618E; color:#F8EEE7;">
+        <nav class="collapse" id="sidebar">
 
             <!-- sidebar components -->
             <ul class="list-unstyled components m-2">
@@ -34,7 +34,7 @@
 
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/nearby">
                         <span class="material-icons">place</span>
                         Nearby</a>
 
@@ -85,37 +85,36 @@
             </ul>
 
         </nav>
-
         <!-- Rest of Nav Bar-->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn" data-bs-toggle="collapse"
                         data-bs-target="#sidebar">
-                        <span class="material-icons" style="color:#94618E;">view_list</span>
+                        <span class="material-icons" style="color:white;">view_list</span>
                     </button>
 
                     <div class="navbar-header">
-                        <a class="navbar-brand ml-4" href="/" style="color:#94618E;">TheSpot</a>
+                        <a class="navbar-brand ml-4" href="/">TheSpot</a>
                     </div>
-
+                    <!-- Figure out how to use api to redirect to categories pages  -->
                     <ul class="nav navbar-nav flex-md-row mx-auto">
-                        <a class="nav-link" style="color: #94618E;" href="/category_list/concerts">Concerts</a>
-                        <a class="nav-link" style="color: #94618E;" href="/category_list/arts">Arts & Theater</a>
-                        <a class="nav-link" style="color: #94618E;" href="/category_list/sports">Sports</a>
-                        <a class="nav-link" style="color: #94618E;" href="/category_list/family">Family</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
+                        <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
                     </ul>
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
-                        <input type="submit" class="btn material-icons" style="color: #49274A;" value="search">
+                        <input type="submit" class="btn material-icons" style="color: white;" value="search">
                     </form>
 
-                    <a href="/LoginHome" class="btn" style="color: #94618E;"> Sign In</a>
-                    <a href="/cart" class="btn" style="color: #94618E;"> Cart</a>
+                    <a href="/LoginHome" class="btn" style="color: white;"> Sign In</a>
+                    <a href="/cart" class="btn" style="color: white;"> Cart</a>
 
                 </div>
             </nav>
@@ -126,7 +125,7 @@
 
             <div class="text-center">
 
-                <h3 class="display-3" style="color: #94618E;">The Spot</h3>
+                <h3 class="display-3" style="color: #009cde;">The Spot</h3>
                 <p>
                     Front-End: Carolyn Nguyen <br>
                     Back-End: Stephanie Arias
@@ -152,10 +151,10 @@
                 </div>
 
             </div>
-             
-            <footer  class="p-3" >d
+
+            <footer class="p-3">
                 <div class="mx-auto m-3 text-center">
-                    <button type="button" class="btn" style="background-color: #94618E; color: #F8EEE7; ">
+                    <button type="button" class="btn" style="background-color: #009cde; color: #F8EEE7; ">
                         <a href="https://github.com/StephanieArias/TheSpot">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-github" viewBox="0 0 16 16">
@@ -166,7 +165,7 @@
                             TheSpot Repo</a>
 
                     </button>
-                    <button type="button" class="btn" style="background-color: #94618E; color: #F8EEE7; ">
+                    <button type="button" class="btn" style="background-color: #009cde; color: #F8EEE7; ">
                         <a href="https://github.com/StephanieArias">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-github" viewBox="0 0 16 16">
@@ -177,7 +176,7 @@
                             Stephanie Arias</a>
 
                     </button>
-                    <button type="button" class="btn" style="background-color: #94618E; color: #F8EEE7; ">
+                    <button type="button" class="btn" style="background-color: #009cde; color: #F8EEE7; ">
                         <a href="https://github.com/carolynttnguyen">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-github" viewBox="0 0 16 16">

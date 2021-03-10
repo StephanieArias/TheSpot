@@ -34,7 +34,7 @@
 
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/nearby">
                         <span class="material-icons">place</span>
                         Nearby</a>
 
@@ -82,6 +82,11 @@
                         <span class="material-icons">info</span>
                         About</a>
                 </li>
+                <li>
+                    <a href="/logout"  style="color: #e2c42f;"> 
+                        <span class="material-icons">logout</span>
+                        Logout</a>
+                </li>
             </ul>
 
         </nav>
@@ -89,33 +94,33 @@
         <!-- Rest of Nav Bar-->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn" data-bs-toggle="collapse"
                         data-bs-target="#sidebar">
-                        <span class="material-icons" style="color:#94618E;">view_list</span>
+                        <span class="material-icons" style="color:white;">view_list</span>
                     </button>
 
                     <div class="navbar-header">
                         <a class="navbar-brand ml-4" href="/">TheSpot</a>
                     </div>
                     <!-- Figure out how to use api to redirect to categories pages  -->
-                    <ul class="nav navbar-nav flex-md-row mx-auto" >
-                        <a class="nav-link" style="color: white;" href="/category_list/concerts">Concerts</a>
-                        <a class="nav-link"  style="color: white;" href="/category_list/arts">Arts & Theater</a>
-                        <a class="nav-link" style="color: white;" href="/category_list/sports">Sports</a>
+                    <ul class="nav navbar-nav flex-md-row mx-auto">
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
                         <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
                     </ul>
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
-                        <input type="submit" class="btn material-icons" style="color: #49274A;" value="search">
+                        <input type="submit" class="btn material-icons" style="color: white;"  value="search">
                     </form>
 
-                    <a href="/LoginHome" class="btn" style="color: white;" > Sign In</a>
-                    <a href="/cart" class="btn" style="color: white;" > Cart</a>
+                    <a href="/LoginHome" class="btn" style="color: white;"> Sign In</a>
+                    <a href="/cart" class="btn" style="color: white;"> Cart</a>
 
                 </div>
             </nav>
@@ -126,9 +131,8 @@
 
             <!-- Featured events for current week -->
 
-            <div class="container mx-auto m-2">
-                <div class="row" >
-                    <div class="col">
+                <div class="row mx-auto">
+                    <div class="col-4 justify-content-start">
                         <h5>Upcoming This Week</h5>
 
                         <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
@@ -140,21 +144,22 @@
                             w-latlong="34.0390107,-118.2672801">
                         </div>
                     </div>
-                    <div class="col">
+
+                    <div class="col-8 justify-content-end">
                         <h5>Discover</h5>
                         <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
                             w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="grid" w-colorscheme="light"
-                            w-width="100%" w-height="550" w-size="12" w-border="2" w-borderradius="4" w-postalcode=""
+                            w-width="200%" w-height="550" w-size="12" w-border="2" w-borderradius="4" w-postalcode=""
                             w-radius="25" w-city="Los Angeles" w-period="year" w-layout="fullwidth" w-attractionid=""
                             w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
                             w-titlelink="off" w-sorting="groupByName" w-id="id_1wqc8h" w-countrycode="US" w-source=""
-                            w-branding="TicketWeb" w-maxheight="" w-latlong=""></div>
+                            w-branding="TicketWeb" w-maxheight="" w-gridcolumns="4" w-latlong=""></div>
 
                     </div>
                 </div>
 
 
-            </div>
+      
 
             <!-- Explore Categories -->
             <div class="d-flex flex-row justify-content-center mt-5">
@@ -245,18 +250,7 @@
 
             </div>
 
-            <!-- popular events -->
-            <div class="flex-row justify-content-center mt-5 p-4">
-                <!-- <h5>Discover</h5>
-                <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
-                    w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="grid" w-colorscheme="dark" w-width="100%"
-                    w-height="550" w-size="12" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25"
-                    w-city="Los Angeles" w-period="year" w-layout="fullwidth" w-attractionid="" w-promoterid=""
-                    w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off"
-                    w-sorting="groupByName" w-id="id_1wqc8h" w-countrycode="US" w-source="" w-branding="TicketWeb"
-                    w-maxheight="" w-latlong=""></div> -->
 
-            </div>
         </div>
     </div>
 
