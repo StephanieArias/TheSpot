@@ -107,7 +107,7 @@ def category_list(request):
     # if data['page']['totalElements'] == 0:
     #     return render(request, 'categories.html', {'concert': concert})
     event_data=[]
-    for event in data['_embedded']['events'][:5]:
+    for event in data['_embedded']['events'][:10]:
         new_event={
             'name': event['name'],
             'location': event['_embedded']['venues'][0]['location'],
