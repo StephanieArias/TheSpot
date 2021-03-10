@@ -82,8 +82,8 @@ def concerts_list(request):
     ticketmaster_url = _generate_ticketmaster_url(artist)
     response = req.get(ticketmaster_url)
     data = response.json()
-    if data['page']['totalElements'] == 0:
-        return render(request, 'concerts_list.html', {'artist': artist})
+    # if data['page']['totalElements'] == 0:
+    #     return render(request, 'concerts_list.html', {'artist': artist})
     event_data=[]
     for event in data['_embedded']['events'][:5]:
         new_event={
@@ -104,8 +104,8 @@ def category_list(request):
     ticketmaster_url = _generate_ticketmaster_url_for_categories(concert)
     response = req.get(ticketmaster_url)
     data = response.json()
-    if data['page']['totalElements'] == 0:
-        return render(request, 'categories.html', {'concert': concert})
+    # if data['page']['totalElements'] == 0:
+    #     return render(request, 'categories.html', {'concert': concert})
     event_data=[]
     for event in data['_embedded']['events'][:5]:
         new_event={
