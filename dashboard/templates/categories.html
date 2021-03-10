@@ -102,16 +102,10 @@
                         <a class="nav-link" style="color: #F8E9A1;" href="#">Sports</a>
                         <a class="nav-link" style="color: #F8E9A1;" href="#">Family</a>
                     </ul>
-
-                    <form class="navbar-form navbar-left" action="/action_page.php">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <span class="material-icons">search</span>
-                                </button>
-                            </div>
-                        </div>
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="text" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-dark" value="Submit">
                     </form>
                     <a href="/LoginHome" class="btn" style="color: #F8E9A1;"> Sign In</a>
 

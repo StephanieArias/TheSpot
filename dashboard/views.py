@@ -107,7 +107,7 @@ def category_list(request):
     # if data['page']['totalElements'] == 0:
     #     return render(request, 'categories.html', {'concert': concert})
     event_data=[]
-    for event in data['_embedded']['events'][:5]:
+    for event in data['_embedded']['events'][:10]:
         new_event={
             'name': event['name'],
             'location': event['_embedded']['venues'][0]['location'],
@@ -121,8 +121,8 @@ def category_list(request):
     }
     return render(request, 'categories.html', html_data)
 
-def _generate_ticketmaster_url_for_categories(artist):
-    modified_artist=artist.replace(' ', '+')
+def _generate_ticketmaster_url_for_categories(concert):
+    modified_artist=concert.replace(' ', '+')
     ticketmaster_key='2f3ueG8j04S9LIVd8lbILPUlU77AphrA'
     return f"https://app.ticketmaster.com/discovery/v2/events.json?keyword={ modified_artist }&apikey={ ticketmaster_key }"
 

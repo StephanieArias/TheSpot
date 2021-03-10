@@ -108,8 +108,8 @@
                         <a class="nav-link" style="color: #F8E9A1;" href="#">Family</a>
                     </ul>
                     
-                    <form class="navbar-form navbar-left" method="POST" action="{% url 'concerts_list' %}">
-                        <input type="text" name="artist" placeholder="Search">
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
                         <input type="submit" class="btn btn-dark" value="Submit">
                     </form>
