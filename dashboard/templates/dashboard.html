@@ -42,26 +42,27 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/concert">
                         
                         <span class="material-icons">music_note</span>
                         Concerts</a>
+                        
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/arts">
                         <span class="material-icons">brush</span>
                         Arts & Theaters</a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/family">
                         <span class="material-icons">groups</span>
                         Family</a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/sports">
                         <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
@@ -77,10 +78,8 @@
                 </li>
 
                 <li>
-                    <a href="#">
-                        <span class="material-icons">info</span>
-                    <a href="/about" style="color:  rgb(83, 83, 83)">
-                        <span class="material-icons" style="color:  rgb(83, 83, 83)">info</span>
+                    <a href="/about" >
+                        <span class="material-icons" >info</span>
                         About</a>
                 </li>
             </ul>
@@ -177,7 +176,7 @@
                 <div class="col-sm-3 my-auto  ">
                     <div class="card">
                         <img class="card-img"
-                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg"
+                            src="https://cdn.vox-cdn.com/thumbor/y-GIwaGD2Y-cg-3xwxaLgSmrzT4=/0x0:5665x3777/1200x800/filters:focal(2380x1436:3286x2342)/cdn.vox-cdn.com/uploads/chorus_image/image/67779554/AdobeStock_266551660.0.jpeg"
                             alt="Bologna">
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Concerts</h4>
@@ -199,13 +198,13 @@
                 <div class="col-sm-3 my-auto ">
                     <div class="card">
                         <img class="card-img"
-                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg"
+                            src="https://media1.s-nbcnews.com/i/newscms/2020_04/3203056/200126-kobe-bryant-cs-305p_9e68c5f644fe7a5e07bca64fbfe5b270.jpg"
                             alt="Bologna">
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Sports</h4>
                             
                             <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                <input type="hidden" value="sport" name="concert" placeholder="Search">
+                                <input type="hidden" value="sport" name="sport" placeholder="Search">
                                 {% csrf_token %}
                                 <input type="submit" class="btn" style="color: #f1b50e;" value="Explore">
                             </form>
@@ -218,8 +217,8 @@
                 <!-- card 3 -->
                 <div class="col-sm-3 my-auto ">
                     <div class="card">
-                        <img class="card-img"
-                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg"
+                        <img class="card-img" width=""
+                            src="https://media.newyorker.com/photos/59097095ebe912338a377044/master/pass/150928_r27066.jpg"
                             alt="Bologna">
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Arts & Theaters</h4>
@@ -240,7 +239,7 @@
                 <div class="col-sm-3 my-auto ">
                     <div class=" card">
                         <img class="card-img"
-                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg"
+                            src="https://www.marketplace.org/wp-content/uploads/2020/07/Walt-Disney-World-e1594920709667.jpg?fit=2700%2C1518"
                             alt="Bologna">
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
                             <h4 class="card-title">Family</h4>

@@ -13,7 +13,7 @@ urlpatterns = [
     path('login', views.login),
     path('logout', views.logout),
     path('success', views.success),
-    path('category-<str:catName>', views.categoryPage),
+    path('category_list/<str:catName>', views.category_list),
     path('eventInfo', views.eventInfo),
 ]
 
