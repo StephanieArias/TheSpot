@@ -48,6 +48,7 @@
 
                         <span class="material-icons">music_note</span>
                         Concerts</a>
+                        
 
                 </li>
 
@@ -154,48 +155,68 @@
             </nav>
 
             {% block content %}
-            <div class="alert alert-primary p-3 m-5" role="alert">
-                <h1> <strong>Your results: </strong></h1>
+
+            <div class="row">
+                <div class="col">
+
+                    <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
+                        w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="simple"
+                        w-colorscheme="light" w-width="600" w-height="550" w-size="25" w-border="0" w-borderradius="0"
+                        w-postalcode="" w-radius="25" w-city="" w-period="month" w-layout="fullwidth" w-attractionid=""
+                        w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
+                        w-titlelink="on" w-sorting="groupByName" w-id="id_om16i8" w-countrycode="US" w-source=""
+                        w-branding="TicketWeb" w-showfulleventsnames="true" w-latlong="{{concert.location}}">
+                    </div>
+
+
+                </div>
+                <div class="col">
+                    <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
+                        w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="listviewthumbnails"
+                        w-colorscheme="light" w-width="600" w-height="550" w-size="25" w-border="2" w-borderradius="0"
+                        w-postalcode="" w-radius="25" w-city="" w-period="month" w-layout="fullwidth" w-attractionid=""
+                        w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
+                        w-titlelink="on" w-sorting="groupByName" w-id="id_om16i8" w-countrycode="US" w-source=""
+                        w-branding="TicketWeb" w-maxheight="" w-showfulleventsnames="true" w-latlong="{{concert.location}}">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="alert -3 m-5" role="alert">
+                <h4> <strong>Your results: </strong></h4>
             </div>
             {% if concerts %}
             {% for concert in concerts %}
-
-            <div class="card m-5">
-                <h5 class="card-header p-5">{{ concert.venue }}</h5>
-                <iframe class="card-img-top" width="100" height="450" frameborder="0" style="border:0"
-                    src="{{concert.location}}" allowfullscreen>
-                </iframe>
-                <div class="card-body">
-                    <h5 class="card-title">{{ concert.name }}</h5>
+            <div class="d-flex justify-content-center">
+                <div class="card m-3" style="width: 20rem; height: 35rem;">
+                    <iframe class="card-img-top" width="200" height="400"
+                        src="{{concert.location}}">
+                    </iframe>
+    
+                    <div class="card-body">
+                        <p class="card-header">{{ concert.venue }}</p>
+                        <h5 class="card-header display-6 ">{{ concert.name }}</h5>
+        
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
-            {% else %}
-            <div class="jumbotron m-5">
-                <h1 class="display-4">Your search returned <strong>0</strong> results.</h1>
 
-            </div>
-            {% endif %}
-            {% endblock %}
+                {% endfor %}
 
-
-            <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
-                w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="simple" w-colorscheme="light"
-                w-width="100%" w-height="550" w-size="25" w-border="0" w-borderradius="0" w-postalcode="" w-radius="25"
-                w-city="{{category.location}" w-period="month" w-layout="fullwidth" w-attractionid="" w-promoterid=""
-                w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="on"
-                w-sorting="groupByName" w-id="id_om16i8" w-countrycode="US" w-source="" w-branding="TicketWeb"
-                w-showfulleventsnames="true" w-latlong="">
+                {% else %}
+    
+                <div class="jumbotron m-5">
+                    <h1 class="display-4">Your search returned <strong>0</strong> results.</h1>
+    
+                </div>
+                {% endif %}
+                {% endblock %}
             </div>
+            
+          
 
-            <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
-                w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="listviewthumbnails"
-                w-colorscheme="light" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="0"
-                w-postalcode="" w-radius="25" w-city="{{category.location}}" w-period="month" w-layout="fullwidth"
-                w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
-                w-titlelink="on" w-sorting="groupByName" w-id="id_om16i8" w-countrycode="US" w-source=""
-                w-branding="TicketWeb" w-maxheight="" w-showfulleventsnames="true" w-latlong="">
-            </div>
         </div>
 
 

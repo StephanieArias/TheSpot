@@ -113,11 +113,7 @@ def concerts_list(request):
     }
     return render(request, 'concerts_list.html', html_data)
 
-def categoryList (request, catName):
-    search_data = {
-        'category': catName
-    }
-    return render(request, 'categories.html', search_data)
+
 
 def category_list(request):
     concert = request.POST['concert']
