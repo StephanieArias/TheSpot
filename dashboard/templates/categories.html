@@ -117,7 +117,7 @@
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="hidden" value="arts" name="concert" placeholder="Search">
                         {% csrf_token %}
-                        <input type="submit" class="btn" style="color: #ffffff;" value="Arts&Theatre">
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Arts & Theatre">
                     </form>
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
@@ -132,15 +132,6 @@
                         <input type="submit" class="btn" style="color: #ffffff;" value="Family">
                     </form>
 
-
-
-
-                    <!-- <ul class="nav navbar-nav flex-md-row mx-auto">
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
-                        <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
-                    </ul> -->
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
@@ -160,7 +151,7 @@
                 <div class="col">
 
                     <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
-                        w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="simple"
+                        w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{concert}}" w-theme="simple"
                         w-colorscheme="light" w-width="600" w-height="550" w-size="25" w-border="0" w-borderradius="0"
                         w-postalcode="" w-radius="25" w-city="" w-period="month" w-layout="fullwidth" w-attractionid=""
                         w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
@@ -172,7 +163,7 @@
                 </div>
                 <div class="col">
                     <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
-                        w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="listviewthumbnails"
+                        w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{concert}}" w-theme="listviewthumbnails"
                         w-colorscheme="light" w-width="600" w-height="550" w-size="25" w-border="2" w-borderradius="0"
                         w-postalcode="" w-radius="25" w-city="" w-period="month" w-layout="fullwidth" w-attractionid=""
                         w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
