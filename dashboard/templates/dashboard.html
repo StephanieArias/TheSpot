@@ -239,7 +239,7 @@
                             <div class="link d-flex">
 
                                 <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                    <input type="hidden" value="arts" name="art" placeholder="Search">
+                                    <input type="hidden" value="arts" name="concert" placeholder="Search">
                                     {% csrf_token %}
                                     <input type="submit" class="btn" style="color: #ffffff;" value="Explore">
                                 </form>
@@ -259,7 +259,7 @@
                             <div class="link d-flex">
 
                                 <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                    <input type="hidden" value="" name="family" placeholder="Search">
+                                    <input type="hidden" value="Disney" name="concert" placeholder="Search">
                                     {% csrf_token %}
                                     <input type="submit" class="btn" style="color: #ffffff;" value="Explore">
                                 </form>
