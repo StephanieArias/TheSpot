@@ -72,7 +72,6 @@ def editAccount(request):
         current_user.email = request.POST['email']
         pw = bcrypt.hashpw(form['password'].encode(), bcrypt.gensalt()).decode()
         current_user.password = pw
-        return redirect('/')
     current_user = User.objects.get(id=request.session['user_id'])
     context = {
         'curUser': current_user
