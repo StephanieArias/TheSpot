@@ -104,23 +104,6 @@
                         <a class="navbar-brand ml-4" href="/">TheSpot</a>
                     </div>
                     <!-- Figure out how to use api to redirect to categories pages  -->
-<<<<<<< HEAD
-                    <ul class="nav navbar-nav flex-md-row mx-auto">
-                        <!-- <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a> -->
-                        
-                        <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                            <input type="hidden" value="concert" name="concert" placeholder="Search">
-                            {% csrf_token %}
-                            <input type="submit" class="btn"  value="concert">
-                        </form>
-
-                        
-
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
-                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
-                        <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
-                    </ul>
-=======
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="hidden" value="Post Malone" name="concert" placeholder="Search">
@@ -152,7 +135,6 @@
                         <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
                         <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
                     </ul> -->
->>>>>>> 7e0eb15562741a676e42e8eb7f7f5005ea27ba84
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
