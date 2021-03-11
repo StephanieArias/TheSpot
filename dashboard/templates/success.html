@@ -13,13 +13,13 @@
 </head>
 
 <body>
-    <h1>Welcome, {{ user.first_name }}!</h1>
-    <ul class="messages">
+    <h1 class="m-3">Welcome, {{ user.first_name }}!</h1>
+    <!-- <ul class="messages">
         {% for message in messages %}
         <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
-    <!-- <a href="/logout" class="btn" style="color: #e2c42f;">Log Out</a> -->
+    <a href="/logout" class="btn" style="color: #e2c42f;">Log Out</a> -->
 </body>
 </html>
 {% endblock %}

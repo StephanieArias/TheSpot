@@ -40,6 +40,11 @@
 
 
                 </li>
+<<<<<<< HEAD
+
+               
+            </ul>
+=======
 <!-- 
                 <li>
                     <a href="category_list/concert">
@@ -67,6 +72,7 @@
                         Sports</a>
                 </li>
             </ul> -->
+>>>>>>> 3699c1e60a0454f0f9955ef9fc4841ffc0d6dd8c
 
 
 
@@ -110,6 +116,8 @@
                         {% csrf_token %}
                         <input type="submit" class="btn" style="color: #ffffff;" value="Concerts">
                     </form>
+<<<<<<< HEAD
+=======
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="hidden" value="arts" name="concert" placeholder="Search">
@@ -129,13 +137,37 @@
                         <input type="submit" class="btn" style="color: #ffffff;" value="Family">
                     </form>
 
+>>>>>>> 3699c1e60a0454f0f9955ef9fc4841ffc0d6dd8c
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="arts" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Arts & Theatre">
+                    </form>
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="sport" name="concert" placeholder="Search">
+                        {% csrf_token %}
+<<<<<<< HEAD
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Sport">
+=======
+                        <input type="submit" class="btn material-icons" style="color: white;"  value="search">
+>>>>>>> 3699c1e60a0454f0f9955ef9fc4841ffc0d6dd8c
+                    </form>
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Family">
+                    </form>
+
+                 
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
                         <input type="submit" class="btn material-icons" style="color: white;"  value="search">
                     </form>
-
                     <a href="/LoginHome" class="btn" style="color: white;"> Sign In</a>
                     <a href="/cart" class="btn" style="color: white;"> Cart</a>
 
@@ -169,7 +201,10 @@
 
 
                     <h5 style="color:#49274A;">Features</h5>
-                    <p>User can search based on keywords</p>
+                    <p>User can search for tickets or events based on keywords. </p>
+                    <p>Login and Registration with validations. Users can edit Account Info as well.</p>
+                    <p>Upcoming Events are available for purchase, and events are also categorized</p>
+                    <p></p>
 
                 </div>
 
