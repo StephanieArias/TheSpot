@@ -20,19 +20,23 @@
 <body>
 
     <div class="wrapper">
-        <!-- sidebar -->
-        <nav class="collapse" id="sidebar">
+    </nav>
+         <!-- Sidebar  -->
+         <nav class="collapse" id="sidebar">
 
             <!-- sidebar components -->
             <ul class="list-unstyled components m-2">
-                <li class="active">
-                    <a href="/dashboard">
+                <li>
+
+
+
+                    <a href="/">
                         <span class="material-icons">home</span>
                         Home</a>
 
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/nearby">
                         <span class="material-icons">place</span>
                         Nearby</a>
 
@@ -40,25 +44,27 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/concert">
+
                         <span class="material-icons">music_note</span>
                         Concerts</a>
+
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/arts">
                         <span class="material-icons">brush</span>
                         Arts & Theaters</a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/family">
                         <span class="material-icons">groups</span>
                         Family</a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="category_list/sports">
                         <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
@@ -68,15 +74,20 @@
 
             <ul class="list-unstyled components m-2" id="bottomSideBar">
                 <li>
-                    <a href="#">
+                    <a href="/editAccount">
                         <span class="material-icons">account_circle</span>
                         Account</a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="/about">
                         <span class="material-icons">info</span>
                         About</a>
+                </li>
+                <li>
+                    <a href="/logout"  style="color: #e2c42f;"> 
+                        <span class="material-icons">logout</span>
+                        Logout</a>
                 </li>
             </ul>
 
@@ -84,30 +95,33 @@
         <!-- end of side navbar  -->
 
         <div id="content">
-            <nav class="navbar navbar-expand-lg bg-dark">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn" data-bs-toggle="collapse"
                         data-bs-target="#sidebar">
-                        <span class="material-icons" style="color:#F8E9A1">view_list</span>
+                        <span class="material-icons" style="color:white;">view_list</span>
                     </button>
 
                     <div class="navbar-header">
-                        <a class="navbar-brand ml-4" href="/" style="color:#F8E9A1">TheSpot</a>
+                        <a class="navbar-brand ml-4" href="/">TheSpot</a>
                     </div>
-
+                    <!-- Figure out how to use api to redirect to categories pages  -->
                     <ul class="nav navbar-nav flex-md-row mx-auto">
-                        <a class="nav-link" style="color: #F8E9A1;" href="#">Concerts</a>
-                        <a class="nav-link" style="color: #F8E9A1;" href="#">Arts & Theater</a>
-                        <a class="nav-link" style="color: #F8E9A1;" href="#">Sports</a>
-                        <a class="nav-link" style="color: #F8E9A1;" href="#">Family</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
+                        <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
+                        <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
                     </ul>
+
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
-                        <input type="submit" class="btn btn-dark" value="Submit">
+                        <input type="submit" class="btn material-icons" style="color: white;"  value="search">
                     </form>
-                    <a href="/LoginHome" class="btn" style="color: #F8E9A1;"> Sign In</a>
+
+                    <a href="/LoginHome" class="btn" style="color: white;"> Sign In</a>
+                    <a href="/cart" class="btn" style="color: white;"> Cart</a>
 
                 </div>
             </nav>

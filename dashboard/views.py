@@ -5,6 +5,8 @@ from .models import *
 import requests as req
 
 def dashboard(request):
+    if request.method == 'GET':
+        return render(request, 'dashboard.html')
     return render(request, 'dashboard.html')
 
 
@@ -60,19 +62,28 @@ def success(request):
 def about(request):
     return render(request, 'about.html')
 
-def categoryPage(request, catName):
-    categoryPage
-    # pull information from modals
-    context ={
-
+def editAccount(request):
+    if request.method == 'POST':
+        current_user = User.objects.get(id=request.session['user_id'])
+        current_user.first_name = request.POST['first_name']
+        current_user.last_name = request.POST['last_name']
+        current_user.email = request.POST['email']
+        pw = bcrypt.hashpw(form['password'].encode(), bcrypt.gensalt()).decode()
+        current_user.password = pw
+        return redirect('/')
+    current_user = User.objects.get(id=request.session['user_id'])
+    context = {
+        'curUser': current_user
     }
-    
-    return render(request, 'categories.html', context) 
+    return render(request, 'edit_account.html', context)
 
+def nearby(request):
+    return render(request, 'nearby.html')
     
 def eventInfo(request):
     return render(request, 'event-info.html')
 # Search Functions
+
 def search_form(request):
     return render(request, 'concerts/search_form.html')
 

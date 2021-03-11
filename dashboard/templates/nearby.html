@@ -1,0 +1,15 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+
+<div class="row mx-auto text-center">
+    <div class="mx-auto mb-5 border-bottom" w-type="map" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword=""
+        w-theme="simple" w-colorscheme="light" w-width="990" w-height="600" w-size="25" w-border="1" w-borderradius="4"
+        w-radius="25" w-period="year" w-layout="vertical" w-attractionid="" w-promoterid="" w-venueid=""
+        w-affiliateid="" w-segmentid="" w-proportion="custom" w-geoposition="on" w-source="ticketmaster"
+        w-latlong="34.0390107,-118.2672801">
+    </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=visualization,places" async defer></script>
+<script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/map/1.0.0/lib/main-widget.js"></script>
+
+{% endblock %}
