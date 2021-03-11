@@ -20,9 +20,9 @@
 <body>
 
     <div class="wrapper">
-        </nav>
-        <!-- Sidebar  -->
-        <nav class="collapse" id="sidebar">
+    </nav>
+         <!-- Sidebar  -->
+         <nav class="collapse" id="sidebar">
 
             <!-- sidebar components -->
             <ul class="list-unstyled components m-2">
@@ -48,6 +48,7 @@
 
                         <span class="material-icons">music_note</span>
                         Concerts</a>
+                        
 
                 </li>
 
@@ -107,17 +108,44 @@
                         <a class="navbar-brand ml-4" href="/">TheSpot</a>
                     </div>
                     <!-- Figure out how to use api to redirect to categories pages  -->
-                    <ul class="nav navbar-nav flex-md-row mx-auto">
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="Post Malone" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Concerts">
+                    </form>
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="arts" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Arts&Theatre">
+                    </form>
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="sport" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Sport">
+                    </form>
+
+                    <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
+                        <input type="hidden" value="" name="concert" placeholder="Search">
+                        {% csrf_token %}
+                        <input type="submit" class="btn" style="color: #ffffff;" value="Family">
+                    </form>
+
+
+
+
+                    <!-- <ul class="nav navbar-nav flex-md-row mx-auto">
                         <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
                         <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
                         <a class="nav-link  mr-4" style="color: white;" href="/category_list/sports">Sports</a>
                         <a class="nav-link" style="color: white;" href="/category_list/family">Family</a>
-                    </ul>
+                    </ul> -->
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
                         {% csrf_token %}
-                        <input type="submit" class="btn material-icons" style="color: white;" value="search">
+                        <input type="submit" class="btn material-icons" style="color: white;"  value="search">
                     </form>
 
                     <a href="/LoginHome" class="btn" style="color: white;"> Sign In</a>

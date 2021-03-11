@@ -16,7 +16,7 @@ def LoginHome(request):
 def cart(request):
     return render(request, 'cart.html')
 
-
+##login and register 
 def register(request):
     if request.method == "GET":
         return redirect('/LoginHome')
@@ -59,6 +59,8 @@ def success(request):
     return render(request, 'success.html', context)
 
 
+##about and edit/navbar
+
 def about(request):
     return render(request, 'about.html')
 
@@ -87,6 +89,7 @@ def eventInfo(request):
 def search_form(request):
     return render(request, 'concerts/search_form.html')
 
+##ticketmaster api
 
 def concerts_list(request):
     artist = request.POST['artist']
