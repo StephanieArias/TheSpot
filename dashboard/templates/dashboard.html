@@ -39,7 +39,7 @@
 
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="/category_list/concert" value="concert" name="concert">
 
                         <span class="material-icons">music_note</span>
@@ -64,7 +64,7 @@
                         <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
-            </ul>
+            </ul> -->
 
 
 
@@ -128,8 +128,6 @@
                         {% csrf_token %}
                         <input type="submit" class="btn" style="color: #ffffff;" value="Family">
                     </form>
-
-                 
 
                     <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
                         <input type="text" name="concert" placeholder="Search">
