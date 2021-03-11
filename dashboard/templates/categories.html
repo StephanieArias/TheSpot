@@ -85,7 +85,7 @@
                         About</a>
                 </li>
                 <li>
-                    <a href="/logout"  style="color: #e2c42f;"> 
+                    <a href="/logout" style="color: #e2c42f;">
                         <span class="material-icons">logout</span>
                         Logout</a>
                 </li>
@@ -131,9 +131,9 @@
                         <input type="submit" class="btn" style="color: #ffffff;" value="Family">
                     </form>
 
-                    
-                    
-                    
+
+
+
                     <!-- <ul class="nav navbar-nav flex-md-row mx-auto">
                         <a class="nav-link  mr-4" style="color: white;" href="/category_list/concerts">Concerts</a>
                         <a class="nav-link  mr-4" style="color: white;" href="/category_list/arts">Arts & Theater</a>
@@ -159,7 +159,7 @@
             </div>
             {% if concerts %}
             {% for concert in concerts %}
-    
+
             <div class="card m-5">
                 <h5 class="card-header p-5">{{ concert.venue }}</h5>
                 <iframe class="card-img-top" width="100" height="450" frameborder="0" style="border:0"
@@ -173,13 +173,29 @@
             {% else %}
             <div class="jumbotron m-5">
                 <h1 class="display-4">Your search returned <strong>0</strong> results.</h1>
-    
+
             </div>
             {% endif %}
             {% endblock %}
 
 
+            <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
+                w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="simple" w-colorscheme="light"
+                w-width="100%" w-height="550" w-size="25" w-border="0" w-borderradius="0" w-postalcode="" w-radius="25"
+                w-city="{{category.location}" w-period="month" w-layout="fullwidth" w-attractionid="" w-promoterid=""
+                w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="on"
+                w-sorting="groupByName" w-id="id_om16i8" w-countrycode="US" w-source="" w-branding="TicketWeb"
+                w-showfulleventsnames="true" w-latlong="">
+            </div>
 
+            <div w-type="event-discovery" w-tmapikey="49EHlosvUJTeRXA89vSBYbGNJoLMz8Qx"
+                w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="{{category}}" w-theme="listviewthumbnails"
+                w-colorscheme="light" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="0"
+                w-postalcode="" w-radius="25" w-city="{{category.location}}" w-period="month" w-layout="fullwidth"
+                w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom"
+                w-titlelink="on" w-sorting="groupByName" w-id="id_om16i8" w-countrycode="US" w-source=""
+                w-branding="TicketWeb" w-maxheight="" w-showfulleventsnames="true" w-latlong="">
+            </div>
         </div>
 
 
@@ -200,6 +216,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+    <script
+        src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
+
 
 </body>
 

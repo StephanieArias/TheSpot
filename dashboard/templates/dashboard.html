@@ -40,8 +40,7 @@
                 </li>
 
                 <li>
-
-                    <a href="category_list/concert">
+                    <a href="{% url 'category_list' %}" >
 
                         <span class="material-icons">music_note</span>
                         Concerts</a>
@@ -49,19 +48,19 @@
                 </li>
 
                 <li>
-                    <a href="category_list/arts">
+                    <a href="{% url 'category_list' %}" name="concert">
                         <span class="material-icons">brush</span>
                         Arts & Theaters</a>
                 </li>
 
                 <li>
-                    <a href="category_list/family">
+                    <a href="{% url 'category_list' %}" >
                         <span class="material-icons">groups</span>
                         Family</a>
                 </li>
 
                 <li>
-                    <a href="category_list/sports">
+                    <a href="{% url 'category_list' %}">
                         <span class="material-icons">sports</span>
                         Sports</a>
                 </li>
@@ -82,7 +81,7 @@
                         About</a>
                 </li>
                 <li>
-                    <a href="/logout"  style="color: #e2c42f;"> 
+                    <a href="/logout"  style="color: #e2c42f;">
                         <span class="material-icons">logout</span>
                         Logout</a>
                 </li>
@@ -240,7 +239,7 @@
                             <div class="link d-flex">
 
                                 <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                    <input type="hidden" value="arts" name="concert" placeholder="Search">
+                                    <input type="hidden" value="arts" name="art" placeholder="Search">
                                     {% csrf_token %}
                                     <input type="submit" class="btn" style="color: #ffffff;" value="Explore">
                                 </form>
@@ -260,7 +259,7 @@
                             <div class="link d-flex">
 
                                 <form class="navbar-form navbar-left" method="POST" action="{% url 'category_list' %}">
-                                    <input type="hidden" value="" name="concert" placeholder="Search">
+                                    <input type="hidden" value="" name="family" placeholder="Search">
                                     {% csrf_token %}
                                     <input type="submit" class="btn" style="color: #ffffff;" value="Explore">
                                 </form>
